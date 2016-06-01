@@ -22,9 +22,9 @@ namespace HamRadioTweetsGateway
 
             sw.WriteLine("user KR0SIV pass 16821");
             sw.Flush();
+            
 
-
-            new Thread(() =>//creates a new thread that will read data and print it to the screen
+            new Thread(() => //creates a new thread that will read data and print it to the screen
             {
                 string data = sr.ReadLine();
                 while (data != null) //while data is not equal to null do the following
@@ -36,7 +36,7 @@ namespace HamRadioTweetsGateway
             }).Start();
 
 
-
+/*
             new Thread(() =>
             {
 
@@ -46,17 +46,22 @@ namespace HamRadioTweetsGateway
 
 
             }).Start();
+*/
+
 //Below is a valid APRS packet
 //            sw.WriteLine("KR0SIV>APRS,TCPIP*,qAC,NINTH::TWITR    :Sent from CSharp Code");
 //            sw.Flush();
 
         }
 
-
+        
 
         static void Main(string[] args)
         {
-            Initialize();
+            // Initialize();
+            Parse Parser = new Parse();
+            Parser.Ack("KR0SIV>APRS,TCPIP*,qAC,EIGHTH::WB5OD    :Testing what an ack should look like{5");
+            Console.ReadLine();
         }
     }
 }
