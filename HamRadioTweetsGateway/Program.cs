@@ -60,7 +60,7 @@ namespace HamRadioTweetsGateway
         {
             // Initialize();
             Parse Parser = new Parse();
-            Parser.Ack("KR0SIV>APRS,TCPIP*,qAC,EIGHTH::WB5OD    :Testing what an ack should look like{5");
+            Parser.Ack("KR0SIV>APRS,TCPIP*,qAC,EIGHTH::WB5OD    :Testing what an ack should look like{5"); //calling Parser.Ack to parse the data and grab whats need for an ACK
             Console.ReadLine();
         }
     }
